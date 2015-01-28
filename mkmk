@@ -1,0 +1,4 @@
+PU14CODE=$HOME/work/jets/2014-Pileup-Workshop
+FRAMEWORK=$PU14CODE/Framework
+
+$PU14CODE/scripts/mkcxx.pl -f -i "-I$FRAMEWORK -I/opt/local/include" -l "-L$FRAMEWORK -lEventMixer -lz -L/opt/local/lib -lJetCleanser"

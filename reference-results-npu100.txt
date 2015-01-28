@@ -1,0 +1,56 @@
+# ./baseline -chs -massless -hard /Users/gsalam/events/puws2014/lhc14-pythia8-4C-Zprime500-nobdecay-noUE-nev1e5.pu14.gz -pileup /Users/gsalam/events/puws2014/lhc14-pythia8-4C-minbias-nev1e6.pu14.gz -nev 10000 -npu 100 -out reference-results-npu100.txt 
+#
+# event mixer: Event mixer using hard events from /Users/gsalam/events/puws2014/lhc14-pythia8-4C-Zprime500-nobdecay-noUE-nev1e5.pu14.gz and 100 pileup events from /Users/gsalam/events/puws2014/lhc14-pythia8-4C-minbias-nev1e6.pu14.gz with CHS (rescaling charged PU by a factor 1e-60) and massless particles
+# default fcut = 0
+# rapidity rescaling for rho = 1
+# jet_def: Longitudinally invariant anti-kt algorithm with R = 1 and E scheme recombination
+# subjet_def: Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination
+# area_def: Active area (explicit ghosts) with ghosts of area 0.00997331 (had requested 0.01), placed up to y = 4, scattered wrt to perfect grid by (rel) 1, mean_ghost_pt = 1e-100, rel pt_scatter =  0.1, n repetitions of ghost distributions =  1
+# sel_particles: |rap| <= 4
+# sel_jets: (|rap| <= 2.5 * pt >= 150)
+# area subtractor: Subtractor that uses the following background estimator to determine rho: GridMedianBackgroundEstimator, with rectangular grid with rapidity extent -4 < rap < 4, tile size drap x dphi = 0.533333 x 0.571199; including mass safety tests; using known vertex selection: is_charged and leading vertex selection: vertex number == 0
+# trimmer: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection pt >= 0* pt_ref, subtractor: Subtractor that uses the following background estimator to determine rho: GridMedianBackgroundEstimator, with rectangular grid with rapidity extent -4 < rap < 4, tile size drap x dphi = 0.533333 x 0.571199; including mass safety tests; using known vertex selection: is_charged and leading vertex selection: vertex number == 0
+# subjet_zeroing: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection (pt >= 0* pt_ref && has charge from leading vertex), subtractor: Subtractor that uses the following background estimator to determine rho: GridMedianBackgroundEstimator, with rectangular grid with rapidity extent -4 < rap < 4, tile size drap x dphi = 0.533333 x 0.571199; including mass safety tests; using known vertex selection: is_charged and leading vertex selection: vertex number == 0
+# subjet_protected: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection (pt >= 0* pt_ref && (has charge from leading vertex || pt >= 20)), subtractor: Subtractor that uses the following background estimator to determine rho: GridMedianBackgroundEstimator, with rectangular grid with rapidity extent -4 < rap < 4, tile size drap x dphi = 0.533333 x 0.571199; including mass safety tests; using known vertex selection: is_charged and leading vertex selection: vertex number == 0
+# npc subtractor: Neutral-proportional-to-Charged subtraction using known fraction: 1.57732e-60, known vertex selection: is_charged, leading vertex selection: vertex number == 0 and safety checks for pt and mass.
+# npc trimmer: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection pt >= 0* pt_ref, subtractor: Neutral-proportional-to-Charged subtraction using known fraction: 1.57732e-60, known vertex selection: is_charged, leading vertex selection: vertex number == 0 and safety checks for pt and mass.
+# npc subjet_zeroing: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection (pt >= 0* pt_ref && has charge from leading vertex), subtractor: Neutral-proportional-to-Charged subtraction using known fraction: 1.57732e-60, known vertex selection: is_charged, leading vertex selection: vertex number == 0 and safety checks for pt and mass.
+# subjet_protected: Filter with subjet_def = Longitudinally invariant kt algorithm with R = 0.3 and E scheme recombination, selection (pt >= 0* pt_ref && (has charge from leading vertex || pt >= 20)), subtractor: Neutral-proportional-to-Charged subtraction using known fraction: 1.57732e-60, known vertex selection: is_charged, leading vertex selection: vertex number == 0 and safety checks for pt and mass.
+# linear_cleanser: JetCleanser [Linear mode, input = neutral and charged separate]
+ Trimming: fcut = 0
+ g0_mean = 0.612
+
+
+# iev = 10000 at 2015-01-20 22:04:10 (CET)
+# <npu> = 100
+# fraction of events with (njet >= 1) = 0.7558 +- 0.00429633
+dijet.mass.area-sub:          <diff> = -0.376 +-  0.438; std.dev =   33.1 +-   1.17; correl.coeff =  0.965; nentries = 5687
+dijet.mass.area-subj-zeroed:  <diff> =  -3.81 +-  0.622; std.dev =   46.9 +-   2.94; correl.coeff =  0.933; nentries = 5687
+dijet.mass.area-subj-zprot:   <diff> =  0.834 +-   0.33; std.dev =   24.9 +-   1.44; correl.coeff =   0.98; nentries = 5687
+dijet.mass.area-trimmed:      <diff> =   34.2 +-    0.4; std.dev =   30.1 +-   1.28; correl.coeff =  0.971; nentries = 5687
+dijet.mass.full:              <diff> =    283 +-   0.89; std.dev =   67.1 +-   1.12; correl.coeff =  0.895; nentries = 5687
+dijet.mass.linclean:          <diff> =   4.91 +-   0.64; std.dev =   48.3 +-   2.87; correl.coeff =  0.931; nentries = 5687
+dijet.mass.npc-sub:           <diff> =  0.589 +-  0.433; std.dev =   32.7 +-   1.14; correl.coeff =  0.966; nentries = 5687
+dijet.mass.npc-subj-zeroed:   <diff> =  -1.32 +-  0.619; std.dev =   46.7 +-   2.94; correl.coeff =  0.934; nentries = 5687
+dijet.mass.npc-subj-zprot:    <diff> =   3.17 +-  0.326; std.dev =   24.6 +-   1.44; correl.coeff =   0.98; nentries = 5687
+dijet.mass.npc-trimmed:       <diff> =   42.9 +-  0.388; std.dev =   29.3 +-   1.28; correl.coeff =  0.973; nentries = 5687
+jet.mass.area-sub:            <diff> =   1.65 +-  0.167; std.dev =   19.5 +-   0.49; correl.coeff =  0.765; nentries = 13579
+jet.mass.area-subj-zeroed:    <diff> =   1.16 +-  0.117; std.dev =   13.7 +-  0.627; correl.coeff =  0.876; nentries = 13579
+jet.mass.area-subj-zprot:     <diff> =   1.63 +-  0.116; std.dev =   13.6 +-  0.631; correl.coeff =  0.878; nentries = 13579
+jet.mass.area-trimmed:        <diff> =   22.2 +-  0.149; std.dev =   17.3 +-  0.511; correl.coeff =  0.784; nentries = 13579
+jet.mass.full:                <diff> =    106 +-  0.203; std.dev =   23.6 +-  0.381; correl.coeff =  0.632; nentries = 13579
+jet.mass.linclean:            <diff> =   6.73 +-  0.115; std.dev =   13.4 +-  0.634; correl.coeff =  0.881; nentries = 13579
+jet.mass.npc-sub:             <diff> =   2.44 +-  0.171; std.dev =   19.9 +-  0.441; correl.coeff =  0.759; nentries = 13579
+jet.mass.npc-subj-zeroed:     <diff> =   2.71 +-  0.118; std.dev =   13.8 +-   0.62; correl.coeff =  0.875; nentries = 13579
+jet.mass.npc-subj-zprot:      <diff> =   3.12 +-  0.116; std.dev =   13.5 +-   0.63; correl.coeff =   0.88; nentries = 13579
+jet.mass.npc-trimmed:         <diff> =   26.6 +-  0.147; std.dev =   17.2 +-  0.521; correl.coeff =  0.787; nentries = 13579
+jet.pt.area-sub:              <diff> = -0.299 +-  0.131; std.dev =   15.3 +-   0.52; correl.coeff =  0.964; nentries = 13579
+jet.pt.area-subj-zeroed:      <diff> =  -1.14 +-  0.156; std.dev =   18.2 +-  0.797; correl.coeff =  0.951; nentries = 13579
+jet.pt.area-subj-zprot:       <diff> =  0.182 +- 0.0976; std.dev =   11.4 +-  0.675; correl.coeff =   0.98; nentries = 13579
+jet.pt.area-trimmed:          <diff> =     11 +-  0.114; std.dev =   13.3 +-  0.595; correl.coeff =  0.973; nentries = 13579
+jet.pt.full:                  <diff> =   97.5 +-   0.18; std.dev =     21 +-  0.406; correl.coeff =  0.936; nentries = 13579
+jet.pt.linclean:              <diff> =   1.91 +-  0.162; std.dev =   18.9 +-  0.801; correl.coeff =  0.947; nentries = 13579
+jet.pt.npc-sub:               <diff> = -0.065 +-  0.133; std.dev =   15.5 +-   0.52; correl.coeff =  0.963; nentries = 13579
+jet.pt.npc-subj-zeroed:       <diff> = -0.278 +-  0.157; std.dev =   18.3 +-  0.795; correl.coeff =   0.95; nentries = 13579
+jet.pt.npc-subj-zprot:        <diff> =  0.993 +- 0.0982; std.dev =   11.4 +-   0.68; correl.coeff =   0.98; nentries = 13579
+jet.pt.npc-trimmed:           <diff> =   13.9 +-  0.112; std.dev =   13.1 +-  0.615; correl.coeff =  0.974; nentries = 13579
