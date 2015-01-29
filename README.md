@@ -2,7 +2,7 @@ Code to reproduce results shown in arXiv:1404.7353
 --------------------------------------------------
 
 This code is intended to allow easy reproduction of the results given
-in [arXiv:1404.7353](http://arxiv.org/abs/arXiv:1407.0408).
+in [arXiv:1404.7353](http://arxiv.org/abs/arXiv:1407.0408) (v2).
 
 Usage
 -----
