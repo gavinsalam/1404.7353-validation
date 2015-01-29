@@ -2,7 +2,7 @@ Code to reproduce results shown in arXiv:1404.7353
 --------------------------------------------------
 
 This code is intended to allow easy reproduction of the results given
-in (arXiv:1404.7353)[http://arxiv.org/abs/arXiv:1407.0408].
+in [arXiv:1404.7353](http://arxiv.org/abs/arXiv:1407.0408).
 
 Usage
 -----
@@ -13,8 +13,8 @@ You will need to carry out the following steps:
    at least version 3.1.0, fastjet contrib version > 1.014 (should be
    installed to the same location as fastjet) and the Boost C++ library.
 
-2. Get the lightweight event-analysis framework from the (Pileup 2014
-   workshop)[https://indico.cern.ch/event/306155/]: in some directory,
+2. Get the lightweight event-analysis framework from the [Pileup 2014
+   workshop](https://indico.cern.ch/event/306155/): in some directory,
    do the following
 
         git clone https://github.com/PileupWorkshop/2014PileupWorkshop.git
