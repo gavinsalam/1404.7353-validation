@@ -109,7 +109,7 @@ The reference results for the first command are in file:ref-results/Zp500-npu105
 
 ## Figure 5 ("fingerprint" plots for Z' events)
 
-The same, but replacing "-npu 100" with "-upu 140" (and changing the
+The same, but replacing "-npu 105" with "-upu 140" (and changing the
 output file name). Just a single run is needed since the -upu argument
 gives pileup distributed uniformly over the range 1..140.
 
